@@ -1,3 +1,5 @@
+import 'dart:math';
+import 'package:cara_coroa/Resultado.dart';
 import 'package:flutter/material.dart';
 
 class TelaJogar extends StatefulWidget {
@@ -10,7 +12,16 @@ class TelaJogar extends StatefulWidget {
 class _TelaJogarState extends State<TelaJogar> {
 
   void _exibirResultado(){
-    
+
+    var itens = ["cara", "coroa"];
+    var numero = Random().nextInt( itens.length );
+    var resultado = itens[numero];
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Resultado(resultado)
+        ),
+    );
   }
 
   @override
